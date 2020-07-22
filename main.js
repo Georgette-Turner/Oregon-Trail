@@ -10,12 +10,12 @@ class Traveler {
         this.food = this.food + 2;
     }
     eat() {
-        
+
         if (this.food === 0) {
             return this.isHealthy = false;
-        }    else {
+        } else {
             this.food = this.food - 1
-         }
+        }
     }
 }
 
@@ -42,25 +42,29 @@ class Wagon {
 
         }
     }
- 
+
     shouldQuarantine() {
         console.log(this)
-        for (let counter = 0; counter < this.passengers.length; counter++){
+        for (let counter = 0; counter < this.passengers.length; counter++) {
             let currentPassenger = this.passengers[counter]
             if (currentPassenger.isHealthy === false) {
                 return true
             }
-     }return false
-     }
+        } return false
+    }
 
     totalFood() {
-        for (let counter = 0; counter < this.passengers.length; counter++) {
-             let currentPassengers = this.passengers[counter]
-            return this.totalFood 
-         }
-        
+        let totalFood = 3
+        for (let i = 1; i === this.passengers.length; i++) {
+            let currentPassenger = this.passengersList[i]
+            totalFood = totalFood + currentPassenger.food
+        }
+        return totalFood
     }
 }
+
+
+
 
 let myWagon = new Wagon(2)
 
